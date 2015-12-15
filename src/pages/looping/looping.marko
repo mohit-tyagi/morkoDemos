@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+      <TITLE>
+         Marko Demos
+      </TITLE>
+   </HEAD>
+<BODY>
+    <include template="./../header/header.marko"/>
+    <p> <strong>Simple Looping</strong></p>
+<ul>
+    <li for="color in data.colors" style="color: $color">
+        $color
+    </li>
+</ul>
+
+<ul>
+    <for each="color in data.colors">
+        <li style="color: $color">
+            $color
+        </li>
+    </for>
+</ul>
+
+<ul>
+    <li for="animal in ['dog', 'cat', 'duck']">
+        $animal
+    </li>
+</ul>
+
+
+    <p> <strong>Loop Status Variable eg. index, isFirst, isLast</strong></p>
+
+
+<ul>
+    <li for="color in data.colors; status-var=loop">
+        ${loop.getIndex()+1}) $color
+        <if test="loop.isFirst()"> - FIRST</if>
+        <if test="loop.isLast()"> - LAST</if>
+    </li>
+</ul>
+
+    <p> <strong>Loop Separator  by ','</strong></p>
+
+<for each="color in data.colors" separator=", ">
+    $color
+</for>
+
+<div>
+    <span for="color in data.colors; separator=', '">
+        $color
+    </span>
+</div>
+
+<p> <strong>Property Looping (from JSON)</strong></p>
+<ul>
+    <li for="(name,value) in data.settings">
+        <b>$name</b>:
+        $value
+    </li>
+</ul>
+
+<ul>
+    <for each="(name,value) in data.settings">
+        <li>
+            <b>$name</b>:
+            $value
+        </li>
+    </for>
+</ul>
+
+</BODY>
+</HTML>
