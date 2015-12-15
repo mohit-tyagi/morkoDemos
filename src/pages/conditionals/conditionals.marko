@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+      <TITLE>
+         Marko Demos
+      </TITLE>
+   </HEAD>
+<BODY>
+    <include template="./../header/header.marko"/>
+    <p> <strong>if as attribute</strong></p>
+<div if="data.age lt 50">
+    You are less than 50 years old!
+</div>
+<p><strong>if as element</strong></p>
+<if test="data.age lt 50">
+    You are less than 50 years old!
+</if>
+<p><strong>if-else-if as attribute</strong></p>
+<div if="data.age lt 50">
+    You are less than 50 years old!
+</div>
+<div else-if="data.age eq 50">
+    You are 50 years old
+</div>
+<div else>
+    You are over 50!
+</div>
+
+<p><strong>if-else-if as element</strong></p>
+
+<if test="data.age lt 50">
+    You are less than 50 years old!
+</if>
+<else-if test="data.age eq 50">
+    You are 50 years old
+</else-if>
+<else>
+    You are over 50!
+</else>
+
+</if>
+</BODY>
+</HTML>
