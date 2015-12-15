@@ -7,6 +7,25 @@
    </HEAD>
 <BODY>
     <include template="./../header/header.marko"/>
+    <p><strong>Sipmle text replacement </strong></p>
     <p>Hello ${data.name}</p>
+
+    <!-- Simple variables: -->
+<p>
+    Hello $data.name!
+    You have ${data.count} new messages.
+</p>
+
+<!-- JavaScript expressions: -->
+<p>
+    Hello ${data.name.toUpperCase()}!
+    You have $data.count new messages.
+</p>
+
+<!-- Variables/expressions inside JavaScript strings: -->
+<p>${"Hello $data.name".toUpperCase()}</p>
+
+<!-- Mind blown: -->
+<p>${"Hello and ${'Welcome $data.name!'}".toUpperCase()}</p>
 </BODY>
 </HTML>

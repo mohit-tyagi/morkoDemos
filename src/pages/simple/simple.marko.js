@@ -10,8 +10,20 @@ function create(__helpers) {
     out.w('<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN"> <HTML><HEAD><TITLE>Marko Demos</TITLE></HEAD><BODY>');
     __helpers.i(out, _____header_header_marko, {});
 
-    out.w('<p>Hello ' +
+    out.w('<p><strong>Sipmle text replacement </strong></p><p>Hello ' +
       escapeXml(data.name) +
+      '</p><p>Hello ' +
+      escapeXml(data.name) +
+      '! You have ' +
+      escapeXml(data.count) +
+      ' new messages.</p><p>Hello ' +
+      escapeXml(data.name.toUpperCase()) +
+      '! You have ' +
+      escapeXml(data.count) +
+      ' new messages.</p><p>' +
+      escapeXml(("Hello "+data.name).toUpperCase()) +
+      '</p><p>' +
+      escapeXml(("Hello and "+('Welcome '+data.name+'!')).toUpperCase()) +
       '</p></BODY></HTML>');
   };
 }

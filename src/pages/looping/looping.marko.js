@@ -42,7 +42,7 @@ function create(__helpers) {
         '</li>');
     });
 
-    out.w('</ul><p> <strong>Loop Status Variable eg. isFirst, isLast</strong></p><ul>');
+    out.w('</ul><p> <strong>Loop Status Variable eg. index, isFirst, isLast</strong></p><ul>');
 
     forEachWithStatusVar(data.colors, function(color,loop) {
       out.w('<li>' +
